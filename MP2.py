@@ -235,6 +235,14 @@ def save_file_3(database, file, filename):
 				file.write(database[key][i]+'\n')
 	return file
 
+def count_students(database):
+	subj_no = search_subject(database)
+	print "Students under", subj_no, ":", len(database[subj_no])
+
+def total_students(database):
+	print len(database)
+
+
 #main
 # student_ref = {0: "f_name", 1: "l_name", 2: "m_name", 3: "suffix", 4: "sex", 5: "bday", 6: "course"}
 # student_file = open_file("student")
@@ -267,56 +275,4 @@ subject_student_database = assign_grade(subject_student_database)
 print subject_student_database
 subject_student_file = save_file_2(subject_student_database, subject_student_file, "subject_student")
 
-# subject_faculty_file = open_file("subject_faculty")
-# subject_faculty_database =  read_file_3(subject_faculty_file)
-# print subject_faculty_database
-# subject_faculty_database = assign_faculty(subject_faculty_database)
-# print subject_faculty_database
-# subject_faculty_database = remove_faculty(subject_faculty_database)
-# print subject_faculty_database
-# subject_faculty_file = save_file_3(subject_faculty_database, subject_faculty_file, "subject_student")
-
-
-
-# subject_student_file = open_file("subject_student")
-# subject_faculty_file = open_file("subject_faculty")
-# subject_student_database = read_file_special(subject_student_file)
-# subject_faculty_database = read_file_special2(subject_faculty_file)
-
-# add_student(student_file)
-# print student_database
-# student_file.close()
-
-# add_faculty(faculty_file)
-# print faculty_database
-# faculty_file.close()
-
-# add_subject(subject_file)
-# print subject_database
-# subject_file.close()
-
-# student_database = edit_student(student_database)
-# student_file = save_student_file(student_database, student_file)
-# print student_database[search_student(student_database)]
-
-# faculty_database = edit_faculty(faculty_database)
-# faculty_file = save_faculty_file(faculty_database, faculty_file)
-# print faculty_database[search_faculty(faculty_database)]
-
-# subject_database = edit_subject(subject_database)
-# subject_file = save_subject_file(subject_database, subject_file)
-# print subject_database[search_subject(subject_database)]
-
-# subject_student_database = enlist_student(subject_student_database)
-# print subject_student_database
-# subject_student_database = remove_student(subject_student_database)
-# print subject_student_database
-
-# subject_faculty_database = assign_faculty(subject_faculty_database)
-# print subject_faculty_database
-# subject_faculty_database = remove_faculty(subject_faculty_database)
-# print subject_faculty_database
-
-# print subject_student_database
-# subject_student_database = assign_grade(subject_student_database)
-# print subject_student_database
+count_students(subject_student_database)
