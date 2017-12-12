@@ -116,11 +116,6 @@ def remove_student(database):
 			break
 	return database
 
-def assign_grade(database):
-	s_no = search_subject(database)
-	database[s_no][raw_input("Student number (ex: 201509321): ")] = float(input("Enter grade: "))
-	return database
-	
 def assign_faculty(database):
 	s_no = search_subject(database)
 	fac_no = raw_input("Faculty number (ex: 201509321): ")
@@ -130,7 +125,7 @@ def assign_faculty(database):
 	database[s_no].append(fac_no)
 	print database
 	return database
-	
+
 def remove_faculty(database):
 	s_no = search_subject(database)
 	faculty = raw_input("Faculty number (ex: 201509321): ")
@@ -143,6 +138,13 @@ def remove_faculty(database):
 			break
 	return database
 
+def assign_grade(database):
+	s_no = search_subject(database)
+	stud_no = raw_input("Student number (ex: 201509321): ")
+	grade = raw_input("Enter grade: ")
+	database[s_no][stud_no] = grade
+	return database
+	
 def read_file(file, ref):
 	ctr = 0 
 	ctr2 = 0
@@ -254,23 +256,25 @@ def save_file_3(database, file, filename):
 # print subject_database
 # subject_file = save_file(subject_database, subject_file, subject_ref, "subject")
 
-# subject_student_file = open_file("subject_student")
-# subject_student_database =  read_file_2(subject_student_file)
+subject_student_file = open_file("subject_student")
+subject_student_database =  read_file_2(subject_student_file)
 # print subject_student_database
 # subject_student_database = enlist_student(subject_student_database)
 # print subject_student_database
 # subject_faculty_database = remove_student(subject_student_database)
-# print subject_student_database
-# subject_student_file = save_file_2(subject_student_database, subject_student_file, "subject_student")
+print subject_student_database
+subject_student_database = assign_grade(subject_student_database)
+print subject_student_database
+subject_student_file = save_file_2(subject_student_database, subject_student_file, "subject_student")
 
-subject_faculty_file = open_file("subject_faculty")
-subject_faculty_database =  read_file_3(subject_faculty_file)
-print subject_faculty_database
-subject_faculty_database = assign_faculty(subject_faculty_database)
-print subject_faculty_database
-subject_faculty_database = remove_faculty(subject_faculty_database)
-print subject_faculty_database
-subject_faculty_file = save_file_3(subject_faculty_database, subject_faculty_file, "subject_student")
+# subject_faculty_file = open_file("subject_faculty")
+# subject_faculty_database =  read_file_3(subject_faculty_file)
+# print subject_faculty_database
+# subject_faculty_database = assign_faculty(subject_faculty_database)
+# print subject_faculty_database
+# subject_faculty_database = remove_faculty(subject_faculty_database)
+# print subject_faculty_database
+# subject_faculty_file = save_file_3(subject_faculty_database, subject_faculty_file, "subject_student")
 
 
 
