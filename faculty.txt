@@ -1,2 +1,0 @@
-201501653,Al,Pone,Ca,n/a,M,121279,CS,CSSP
-201509321,Rose Ann,Zuniga,Sale,n/a,M,121212,CS,Computer Science
