@@ -116,7 +116,7 @@ def update_subjects(db_1, db_2, db_3):
 		if (subj in db_2) == False:
 			db_2[subj] = {}
 		if (subj in db_3) == False:
-			db_3[subj] = {}
+			db_3[subj] = []
 	return db_2, db_3
 	
 def enlist_student(db_1, db_2):
